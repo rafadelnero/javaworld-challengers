@@ -1,37 +1,45 @@
 package com.javaworld.javachallengers.equalshashcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class EqualsHashCodeChallenge {
 
-  static int i = 0;
+    static int i = 0;
 
-  public static void main(String... doYourBest) {
-    System.out.println(new Simpson("Bart").equals(new Simpson("Bart")));
+    public static void main(String... doYourBest) {
+        System.out.println(new Simpson("Bart").equals(new Simpson("Bart")));
+        Simpson overriddenHomer = new Simpson("Homer") {
+            public int hashCode() { return (43 + 777) + i; }
+        };
 
-    System.out.println(new Simpson("Homer").equals(new Simpson("Homer") {
-      @Override
-      public int hashCode() {
-        return name.hashCode() + (43 + 777) + i;
-      }
-    }));
-  }
+        System.out.println(new Simpson("Homer").equals(overriddenHomer));
+        Set set = new HashSet(Set.of(new Simpson("Homer")));
+        set.add(new Simpson("Homer"));
+        set.add(overriddenHomer);
+        System.out.println(set.size());
 
-  static class Simpson {
-    String name;
-    Simpson(String name) {
-      this.name = name;
+        set.forEach(h -> System.out.println(h.hashCode()));
     }
 
-    @Override
-    public boolean equals(Object obj) {
-      Simpson otherSimpson = (Simpson) obj;
-      return this.name.equals(otherSimpson.name) &&
-          this.hashCode() == otherSimpson.hashCode();
-    }
+    static class Simpson {
+        String name;
 
-    @Override
-    public int hashCode() {
-      return name.hashCode() + (43 + 777) + (--i);
+        Simpson(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            Simpson otherSimpson = (Simpson) obj;
+            return this.name.equals(otherSimpson.name) &&
+                    this.hashCode() == otherSimpson.hashCode();
+        }
+
+        @Override
+        public int hashCode() {
+            return (43 + 777) + (--i);
+        }
     }
-  }
 
 }
