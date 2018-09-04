@@ -1,25 +1,25 @@
-package com.javaworld.javachallengers.equalshashcode;
+package com.javaworld.javachallengers.equalshashcode.challenge;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class EqualsHashCodeChallenge {
 
-    static int i = 0;
-
     public static void main(String... doYourBest) {
         System.out.println(new Simpson("Bart").equals(new Simpson("Bart")));
         Simpson overriddenHomer = new Simpson("Homer") {
-            public int hashCode() { return (43 + 777) + i; }
+            public int hashCode() {
+                return (43 + 777) + 1;
+            }
         };
 
         System.out.println(new Simpson("Homer").equals(overriddenHomer));
-        Set set = new HashSet(Set.of(new Simpson("Homer")));
+
+        Set set = new HashSet(Set.of(new Simpson("Homer"), new Simpson("Marge")));
         set.add(new Simpson("Homer"));
         set.add(overriddenHomer);
-        System.out.println(set.size());
 
-        set.forEach(h -> System.out.println(h.hashCode()));
+        System.out.println(set.size());
     }
 
     static class Simpson {
@@ -38,7 +38,7 @@ public class EqualsHashCodeChallenge {
 
         @Override
         public int hashCode() {
-            return (43 + 777) + (--i);
+            return (43 + 777);
         }
     }
 

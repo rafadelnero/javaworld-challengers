@@ -1,31 +1,28 @@
-package com.javaworld.javachallengers.hashcode;
-
-import java.util.Objects;
+package com.javaworld.javachallengers.equalshashcode;
 
 public class HashcodeConcept {
 
     public static void main(String... hashcodeExample) {
-        Simpson homer = new Simpson(1, "Homer", 35);
-        Simpson bart = new Simpson(2, "Homer", 35);
+        Simpson homer = new Simpson(1, "Homer");
+        Simpson bart = new Simpson(2, "Homer");
 
         boolean isHashcodeEquals = homer.hashCode() == bart.hashCode();
 
         if (isHashcodeEquals) {
-            homer.equals(bart);
+            System.out.println("Should compare with equals method too.");
         } else {
-            System.out.println("Objects are not equals.");
+            System.out.println("Should not compare with equals method because " +
+                    "the id is different, that means the objects are not equals for sure.");
         }
     }
 
     static class Simpson {
         int id;
         String name;
-        int age;
 
-        public Simpson(int id, String name, int age) {
+        public Simpson(int id, String name) {
             this.id = id;
             this.name = name;
-            this.age = age;
         }
 
 
@@ -35,8 +32,7 @@ public class HashcodeConcept {
             if (o == null || getClass() != o.getClass()) return false;
             Simpson simpson = (Simpson) o;
             return id == simpson.id &&
-                    age == simpson.age &&
-                    Objects.equals(name, simpson.name);
+                    name.equals(simpson.name);
         }
 
         @Override
@@ -46,3 +42,4 @@ public class HashcodeConcept {
     }
 
 }
+
