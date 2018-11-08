@@ -8,21 +8,26 @@ import java.util.List;
 public class MarvelComparator {
 
     public static void main(String... comparator) {
-        List<String> marvel = new ArrayList<>(List.of("SpiderMan ", "Wolverine ", "Xavier ",
-                "Cyclops "));
+        List<String> marvelHeroes = new ArrayList<>();
 
-        Collections.sort(marvel, new Comparator<String>() {
+        marvelHeroes.add("SpiderMan ");
+        marvelHeroes.add("Wolverine ");
+        marvelHeroes.add("Xavier ");
+        marvelHeroes.add("Cyclops ");
+
+
+        Collections.sort(marvelHeroes, new Comparator<String>() {
             @Override
             public int compare(String hero1, String hero2) {
                 return hero1.compareTo(hero2);
             }
         });
 
-        Collections.sort(marvel, (m1, m2) -> m1.compareTo(m2));
+        Collections.sort(marvelHeroes, (m1, m2) -> m1.compareTo(m2));
 
-        Collections.sort(marvel, Comparator.naturalOrder());
+        Collections.sort(marvelHeroes, Comparator.naturalOrder());
 
-        marvel.forEach(System.out::print);
+        marvelHeroes.forEach(System.out::print);
     }
 
 }
