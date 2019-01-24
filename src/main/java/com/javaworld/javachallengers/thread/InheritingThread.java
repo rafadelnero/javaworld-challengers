@@ -2,14 +2,18 @@ package com.javaworld.javachallengers.thread;
 
 public class InheritingThread extends Thread {
 
-    public static void main(String... inheriting) {
-        System.out.println(Thread.currentThread().getName() + " is running.");
+    InheritingThread(String threadName) {
+        super(threadName);
+    }
 
-        new InheritingThread().start();
+    public static void main(String... inheriting) {
+        System.out.println(Thread.currentThread().getName() + " is running");
+
+        new InheritingThread("inheritingThread").start();
     }
 
     @Override
     public void run() {
-        System.out.println(Thread.currentThread().getName() + " is running.");
+        System.out.println(Thread.currentThread().getName() + " is running");
     }
 }
