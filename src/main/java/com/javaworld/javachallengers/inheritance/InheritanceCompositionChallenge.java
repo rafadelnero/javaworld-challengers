@@ -39,4 +39,4 @@ public class InheritanceCompositionChallenge {
         }
     }
 
-} // Drink Drink Why you little! 2
+}

@@ -12,8 +12,7 @@ public class CustomizedConstructorSuper {
 
     class Barney extends Character {
 
-        // We will have compilation error if we don't declare a constructor explicitly
-
+        // We will have compilation error if we don't invoke the constructor explicitly
         // We need to add it
         Barney() {
             super("Barney Gumble");
