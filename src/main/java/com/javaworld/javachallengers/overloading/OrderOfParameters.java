@@ -1,4 +1,4 @@
-package com.developerworks.overloading.concept;
+package com.javaworld.javachallengers.overloading;
 
 /** Order of parameters overloading */
 public class OrderOfParameters {

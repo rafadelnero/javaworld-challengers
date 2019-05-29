@@ -1,4 +1,4 @@
-package com.developerworks.overloading.concept;
+package com.javaworld.javachallengers.overloading;
 
 /** Type of parameters overloading */
 public class TypeOfParameters {

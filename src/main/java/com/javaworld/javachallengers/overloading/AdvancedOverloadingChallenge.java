@@ -1,4 +1,4 @@
-package com.developerworks.overloading;
+package com.javaworld.javachallengers.overloading;
 
 @SuppressWarnings(value = "all")
 public class AdvancedOverloadingChallenge {
