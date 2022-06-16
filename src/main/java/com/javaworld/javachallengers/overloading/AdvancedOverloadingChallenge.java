@@ -13,11 +13,11 @@ public class AdvancedOverloadingChallenge {
             System.out.println(x);
         }
 
-        static void executeAction(int ... var) {x += "a"; }
-        static void executeAction(Integer var) {x += "b"; }
-        static void executeAction(Object var)  {x += "c"; }
-        static void executeAction(short var)   {x += "d"; }
-        static void executeAction(float var)   {x += "e"; }
-        static void executeAction(double var)  {x += "f"; }
+        static void executeAction(int ... var) { x += "a"; }
+        static void executeAction(Integer var) { x += "b"; }
+        static void executeAction(Object var)  { x += "c"; }
+        static void executeAction(short var)   { x += "d"; }
+        static void executeAction(float var)   { x += "e"; }
+        static void executeAction(double var)  { x += "f"; }
 
 }

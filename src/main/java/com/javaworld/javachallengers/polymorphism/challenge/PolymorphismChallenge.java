@@ -3,7 +3,7 @@ package com.javaworld.javachallengers.polymorphism.challenge;
 public class PolymorphismChallenge {
     static abstract class Simpson {
         void talk() {
-            System.out.println("Simpson!");
+            System.out.println("ObjectReferenceExample!");
         }
 
         protected void prank(String prank) {
@@ -20,7 +20,7 @@ public class PolymorphismChallenge {
             System.out.println("Eat my shorts!");
         }
 
-        protected void prank() {
+        void prank() {
             super.prank(prank);
             System.out.println("Knock Homer down");
         }
@@ -31,7 +31,6 @@ public class PolymorphismChallenge {
             System.out.println("I love Sax!");
         }
     }
-
     public static void main(String... doYourBest) {
         new Lisa().talk("Sax :)");
         Simpson simpson = new Bart("D'oh");

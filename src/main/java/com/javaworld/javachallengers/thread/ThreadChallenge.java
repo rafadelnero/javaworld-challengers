@@ -4,7 +4,9 @@ public class ThreadChallenge {
     private static int wolverineAdrenaline = 10;
 
     public static void main(String... doYourBest) {
-        new Motorcycle("Harley Davidson").start();
+        Motorcycle m = new Motorcycle("Harley Davidson");
+        m.setDaemon(false);
+        m.start();
 
         Motorcycle fastBike = new Motorcycle("Dodge Tomahawk");
         fastBike.setPriority(Thread.MAX_PRIORITY);
@@ -13,6 +15,7 @@ public class ThreadChallenge {
 
         Motorcycle yamaha = new Motorcycle("Yamaha YZF");
         yamaha.setPriority(Thread.MIN_PRIORITY);
+        yamaha.setDaemon(false);
         yamaha.start();
     }
 
@@ -27,6 +30,8 @@ public class ThreadChallenge {
         }
     }
 }
+
+
 
 
 

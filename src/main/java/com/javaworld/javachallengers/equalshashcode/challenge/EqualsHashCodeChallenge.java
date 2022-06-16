@@ -1,7 +1,6 @@
 package com.javaworld.javachallengers.equalshashcode.challenge;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class EqualsHashCodeChallenge {
 
@@ -15,7 +14,7 @@ public class EqualsHashCodeChallenge {
 
         System.out.println(new Simpson("Homer").equals(overriddenHomer));
 
-        Set set = new HashSet(Set.of(new Simpson("Homer"), new Simpson("Marge")));
+        var set = Set.of(new Simpson("Homer"), new Simpson("Marge"));
         set.add(new Simpson("Homer"));
         set.add(overriddenHomer);
 
@@ -41,5 +40,4 @@ public class EqualsHashCodeChallenge {
             return (43 + 777);
         }
     }
-
 }
