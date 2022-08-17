@@ -12,7 +12,7 @@ public class RideVehicle {
     ghostRider.takeAction();
 
     AccelerateMotorcycle accelerateCommand = new AccelerateMotorcycle(motorcycle);
-    ghostRider = new GhostRider(accelerateCommand);
+    ghostRider.setCommand(accelerateCommand);
     ghostRider.takeAction();
     ghostRider.revertAction();
 
@@ -20,6 +20,7 @@ public class RideVehicle {
     List<Vehicle> vehicles = List.of(motorcycle, truck);
     StartAllVehicles startAllVehicles = new StartAllVehicles(vehicles);
     startAllVehicles.execute();
+    startAllVehicles.revert();
   }
 
 }
