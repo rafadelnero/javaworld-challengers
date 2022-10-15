@@ -5,10 +5,10 @@ public class ThreadSafeSynchronized {
 
   public static HeroesDB heroesDB;
 
-  public static HeroesDB getHeroesDB(){
-    if(heroesDB == null){
+  public static HeroesDB getHeroesDB() {
+    if(heroesDB == null) {
       synchronized (ThreadSafeSynchronized.class) {
-        if(heroesDB == null){
+        if(heroesDB == null) {
           heroesDB = new HeroesDB();
         }
       }
